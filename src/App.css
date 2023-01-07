@@ -1,4 +1,11 @@
-*{
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -8,16 +15,16 @@
   -webkit-app-region: none;
 }
 
-body{
+body {
   background-color: burlywood;
   display: grid;
-  place-content: center;
-  font-family: "Roboto", san-serif;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
   height: 100vh;
   font-size: 2rem;
 }
 
-.container{
+.container {
   height: 80vh;
   width: 50vh;
   background-color: black;
@@ -33,16 +40,66 @@ body{
   height: 100%;
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: minmax(6rem, auto) repeat(5, 1fr);
   gap: 10px;
+}
+
+.output {
+  grid-column: 1/-1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+.output .previous-operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: white;
+  font-size: 2.5rem;
 }
 
 .btn {
   display: grid;
   place-content: center;
-  background-color: rgb(54,52,52);
+  background-color: rgb(54, 52, 52);
   border-radius: 50%;
   color: white;
   cursor: pointer;
   font-weight: bold;
+}
+
+.btn:hover {
+  background-color: gray;
+}
+
+.light-gray {
+  background-color: gray;
+  color: black;
+}
+
+.light-gray:hover {
+  background-color: white;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.orange:hover {
+  background-color: white;
+  color: orange;
+}
+
+.span-two {
+  grid-column: 1 / span 2;
+  border-radius: 25px;
+}
+
+.equal {
+  grid-column: 3 / span 2;
+  border-radius: 25px;
 }
