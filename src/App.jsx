@@ -110,6 +110,9 @@ const reducer = (state, { type, payload }) => {
         currentOperand: state.currentOperand.slice(0, -1),
       };
     case ACTIONS.NEGATIVE:
+      if(state.currentOperand == null){
+        return state
+      }
       if (state.currentOperand.charAt(0) === "-") {
         return {
           ...state,
